@@ -81,7 +81,6 @@ window.addEventListener("load", function(){
 				trigger: item,
 				start: "top 80%",
 				end: "bottom 20%",
-				markers: true,
 				onEnter: function(){
 					if(item.classList.contains("active") == false){
 						item.classList.add("active");
@@ -275,12 +274,15 @@ window.addEventListener("load", function(){
 	const firstContent = firstTitle?.nextElementSibling;
 
 	if (firstContent) {
-	firstContent.classList.add("active");
-	const initialLiGroup = firstContent.querySelectorAll(".inner_content ul li");
-	const initialParagraph = firstContent.querySelector("p");
-	gsap.set(initialParagraph, { y: 0, opacity: 1 });
-	gsap.set(initialLiGroup, { y: 0, opacity: 1, stagger: 0.1 });
-	firstTitle?.querySelector("span")?.classList.add("active");
+		firstContent.classList.add("active");
+
+		const initialLiGroup = firstContent.querySelectorAll(".inner_content ul li");
+		const initialParagraph = firstContent.querySelector("p");
+
+		gsap.set(initialParagraph, { y: 0, opacity: 1 });
+		gsap.set(initialLiGroup, { y: 0, opacity: 1, stagger: 0.1 });
+		
+		firstTitle?.querySelector("span")?.classList.add("active");
 	}
 
 	sortBy_list.forEach(function(title){
@@ -332,9 +334,6 @@ window.addEventListener("load", function(){
 	});
 
 	let langList = lang.nextElementSibling;
-
-	// console.log(lang);      // null 아니어야 함
-	// console.log(langList); 
 
 	//lang hover
 	lang.addEventListener("mouseenter", function () {
