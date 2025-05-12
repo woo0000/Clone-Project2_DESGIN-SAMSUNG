@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: GNB Prototype</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+\<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollToPlugin.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@latest/swiper-bundle.min.css">
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="js/main.js"></script>
+</head>
+
+<body>
+	<header>
+		<div class="form">
+			<input type="text" placeholder="Input Keyword">
+			<a href="" class="icon">icon</a>
+			<ul>
+				<li><a href="">Galaxy</a></li>
+				<li><a href="">Bspoke</a></li>
+				<li><a href="">UX</a></li>
+				<li><a href="">Accessibility</a></li>
+				<li><a href="">Design Membership</a></li>
+			</ul>
+			<a href="" class="form_close">form_close</a>
+		</div>
+		<div class="h_left">
+			<div class="logo"><h1><a href="">logo </a></h1></div>
+			<nav>
+				<ul>
+					<li><a href="">OUR STORIES</a></li>
+					<li><a href="">ABOUT US</a></li>
+					<li><a href="">CAREER</a></li>
+					<li><a href="">NEWS</a></li>
+					<div class="mo_text_slider">
+						<ul>
+							<li><a href="" class="active">#Meet_the_Designers</a></li>
+							<li><a href="">#Essence_of_Galaxy_S</a></li>
+							<li><a href="">#Imagine_What’s_Next</a></li>
+							<li><a href="">#Local_to_Global</a></li>
+							<li><a href="">#User_eXperience</a></li>
+						</ul>
+					</div>
+					<div class="mo_lang">
+						<span>lang</span>
+						<ul>
+							<li><a href="">KR</a></li>
+							<li><a href="">EN</a></li>
+						</ul>
+					</div>
+				</ul>
+			</nav>
+		</div>
+		<div class="h_right">
+			<div class="text_slider">
+				<ul>
+					<li><a href="" class="active">#Meet_the_Designers</a></li>
+					<li><a href="">#Essence_of_Galaxy_S</a></li>
+					<li><a href="">#Imagine_What’s_Next</a></li>
+					<li><a href="">#Local_to_Global</a></li>
+					<li><a href="">#User_eXperience</a></li>
+				</ul>
+			</div>
+			<div class="utils">
+				<a href="#" class="research">research</a>
+				<a href="" class="lang">lang</a>
+				<ul>
+					<li><a href="">KR</a></li>
+					<li><a href="">EN</a></li>
+				</ul>
+				<a href="" class="mobile_menu">menu</a>
+			</div>
+		</div>
+	</header>
+	<div class="dim"></div>
+	<section id="main">
+		<div class="title">
+			<h2>Essence Takes the Lead</h2>
+			<span>모바일 경험의 새로운 패러다임, 갤럭시 AI</span>
+		</div>
+		<div class="content">
+			<div class="image"><a href=""><img src="images/ourstories-galaxy-ai.jpg" alt="ourstories-galaxy-ai"></a></div>
+			<div class="image_m"><a href=""><img src="images/ourstories-galaxy-ai-m.jpg" alt="ourstories-galaxy-ai-m"></a></div>
+			<div class="text">
+				<p>
+					갤럭시 AI가 우리 일상에 한 걸음 더 가까이 다가올 수 있도록, 일관된 경험과 편리한 사용성을 바탕으로
+					새로이 다듬었습니다. AI 시대에 새로운 패러다임을 만들어가는 갤럭시 AI를 만나보세요.
+				</p>
+				<ul>
+					<li><span>Our Stories</span></li>
+					<li><span>Jan 23, 2025</span></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<section id="latest">
+		<div class="title">
+			<h2>LATEST</h2>
+		</div>
+		<div class="content">
+			<div class="left">
+				<div class="image"><a href=""><img src="images/ourstories-over-the-horizon.jpg" alt="ourstories-over-the-horizon"></a></div>
+				<div class="top">
+					<h3>Over the Horizon</h3>
+					<span>삼성 갤럭시 사운드 브랜딩 스토리</span>
+				</div>
+				<div class="bottom">
+					<p>
+						2011년부터 매년 변화하는 시대상을 반영하며 다채로운 선율을 선보이고 있는 삼성 갤럭시의 대표 사운드 
+						브랜딩 캠페인. 오버 더 호라이즌의 사운드 디자인 스토리를 만나보세요.
+					</p>
+					<ul>
+						<li><span>Our Stories</span></li>
+						<li><span>Feb 10, 2025</span></li>
+					</ul>
+				</div>
+			</div>
+			<ul	class="right">
+				<li>
+					<div class="top">
+						<div class="image"><a href=""><img src="images/news-2025-if-design-award.jpg" alt="news-2025-if-design-award"></a></div>
+						<div class="title">
+							<a href=""><h3>2025 iF 디자인어워드</h3></a>
+						</div>
+					</div>
+					<div class="bottom">
+						<p>
+							삼성전자가 독일의 국제 디자인 공모전 ‘iF 디자인 어워드 2025(International Forum Design Award
+							2025)’에서 금상 2개를 비롯해 총 58개의 상을 받았습니다.
+						</p>
+						<ul>
+							<li><span>News</span></li>
+							<li><span>Feb 28, 2025</span></li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<div class="top">
+						<div class="image"><a href=""><img src="images/ourstories-galaxy-s25.jpg" alt="ourstories-galaxy-s25"></a></div>
+						<div class="title">
+							<a href=""><h3>Galaxy Aesthetics, Refined by Essence</h3></a>
+							<span>강렬한 아이덴티티의 완성, 갤럭시 S25 시리즈</span>
+						</div>
+					</div>
+					<div class="bottom">
+						<p>
+							갤럭시 S 시리즈의 디자인 정체성을 더욱 강화하며 시그니처 룩을 완성한 갤럭시 S25 시리즈. 빠르게 
+							변화하는 시대, 사람들이 갈망하는 새로움 속에서도 스마트폰의 본질에 도달하기 위해 끊임없이 진보하는 
+							갤럭시 S25 시리즈의 이야기를 만나보세요.
+						</p>
+						<ul>
+							<li><span>Our Stories</span></li>
+							<li><span>Jan 23, 2025</span></li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<div class="top">
+						<div class="image"><a href=""><img src="images/ourstories-one-ui-7.jpg" alt="ourstories-one-ui-7"></a></div>
+						<div class="title">
+							<a href=""><h3>A New Look, Evolved from Essence</h3></a>
+							<span>본질에 집중한 모바일 경험, One UI 7</span>
+						</div>
+					</div>
+					<div class="bottom">
+						<p>
+							단순히 기능 사용뿐만 아니라 풍부한 감성과 시각적 즐거움을 추구하며 일상의 가능성을 확장합니다.
+							기술과 사용자의 접점에서 탄탄한 기본기와 감도 높은 비주얼로 모바일 경험의 본질을 구현한 One UI 7을
+							만나보세요.
+						</p>
+						<ul>
+							<li><span>Our Stories</span></li>
+							<li><span>Jan 23, 2025</span></li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<div class="top">
+						<div class="image"><a href=""><img src="images/ourstories-design-highlights-2024.jpg" alt="ourstories-design-highlights-2024"></a></div>
+						<div class="title">
+							<a href=""><h3>Pioneering Design Highlights</h3></a>
+							<span>2024년을 빛낸 삼성전자 디자인</span>
+						</div>
+					</div>
+					<div class="bottom">
+						<p>
+							삼성 디자이너들의 끊임 없는 고민과 노력으로 이루어진, 2024년을 빛낸 혁신적인 디자인을 소개합니다.
+							사람과 기술의 경계를 허물고 더 나은 삶을 실현 하기 위한 삼성 디자인의 특별한 여정을 만나보세요.
+						</p>
+						<ul>
+							<li><span>Our Stories</span></li>
+							<li><span>Dec 17, 2024</span></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<section id="video">
+		<video class="video" src="images/banner-samsung-about.mp4" autoplay loop muted></video>
+		<video class="video_m" src="images/banner-samsung-about-m.mp4" autoplay loop muted></video>
+	</section>
+	<section id="sort">
+		<div class="title">
+			<h2>SORT BY</h2>
+		</div>
+		<div class="content">
+			<ul class="sub_title">
+				<li>
+					<a href="" class="inner_title">
+						<h3>#Meet_the_Designers</h3>
+						<span>arrow</span>
+					</a>
+					<div class="inner_content" class="active">
+						<p>
+							특별한 영감은 무심히 지나치던 일상이 만들어내는 경험에 귀 기울이는 것에서 시작됩니다. 
+							혁신의 불씨가 된 삼성 디자이너의 이야기를 만나보세요.
+						</p>
+						<ul>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-designer-interview-2023.jpg" alt="sortby_1-1"></a>
+								</div>
+								<a href="">
+									<h3>Refresh and Revitalize</h3>
+								</a>
+								<p>재충전을 위한 삼성 디자이너의 여행 이야기</p>
+								<span>Oct 05, 2023</span>
+							</li>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-2022-design-interview.jpg" alt="sortby_1-2"></a>
+								</div>
+								<a href="">
+									<h3>Opening a New Chapter</h3>
+								</a>
+								<p>2022년 삼성전자 신입 디자이너 인터뷰</p>
+								<span>Dec 15, 2022</span>
+							</li>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-designer-interview-2.jpg" alt="sortby_1-3"></a>
+								</div>
+								<a href="">
+									<h3>Here, Samsung Designers</h3>
+								</a>
+								<p>삼성전자에서 디자이너로 일하는 것</p>
+								<span>Oct 06, 2020</span>
+							</li>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-global-designer-interview.jpg" alt="sortby_1-4"></a>
+								</div>
+								<a href="">
+									<h3>Value Seekers Around the World</h3>
+								</a>
+								<p>세계 속 삼성전자 디자이너로 살아가기</p>
+								<span>Oct 17, 2019</span>
+							</li>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-designer-interview.jpg" alt="sortby_1-5"></a>
+								</div>
+								<a href="">
+									<h3>What It Means to Be a Designer</h3>
+								</a>
+								<p>지금, 삼성전자의 젊은 디자이너</p>
+								<span>Sep 06, 2018</span>
+							</li>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-samsungdesigner-part1.jpg" alt="sortby_1-6"></a>
+								</div>
+								<a href="">
+									<h3>Hello, Samsung Designer!</h3>
+								</a>
+								<p>삼성전자 디자이너를 만나다 Part 1</p>
+								<span>Sep 19, 2017</span>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="" class="inner_title">
+						<h3>#Essence_of_Galaxy_S</h3>
+						<span>arrow</span>
+					</a>
+					<div class="inner_content">
+						<p>
+							갤럭시 S 시리즈는 10년이 넘는 시간 동안 완성도 높은 디자인으로 고유의 아이덴티티를 확립해왔습니다. 본질에 집중하면서 유연한 확장으로 시리즈마다 새로운 가치를 제시해온 갤럭시 S 시리즈의 디자인 
+							스토리를 되짚어보세요.
+
+						</p>
+						<ul>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-galaxy-s23.jpg" alt="sortby_2-1"></a>
+								</div>
+								<a href="">
+									<h3>Create the Essentials</h3>
+								</a>
+								<p>삼성 갤럭시 S23 시리즈 디자인스토리</p>
+								<span>Feb 16, 2023</span>
+							</li>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-galaxy-s22.jpg" alt="sortby_2-2"></a>
+								</div>
+								<a href="">
+									<h3>Standard of Premium</h3>
+								</a>
+								<p>삼성 갤럭시 S22 디자인스토리</p>
+								<span>Feb 17, 2022</span>
+							</li>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-galaxy-s20.jpg" alt="sortby_2-3"></a>
+								</div>
+								<a href="">
+									<h3>Upon the Horizon of Innovation</h3>
+								</a>
+								<p>삼성 갤럭시 S20의 세 가지 시선</p>
+								<span>Feb 25, 2020</span>
+							</li>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-galaxy-s10.jpg" alt="sortby_2-4"></a>
+								</div>
+								<a href="">
+									<h3>Radical, Magical</h3>
+								</a>
+								<p>삼성 갤럭시 S10 디자인스토리</p>
+								<span>Feb 21, 2019</span>
+							</li>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-galaxy-s9.jpg" alt="sortby_2-5"></a>
+								</div>
+								<a href="">
+									<h3>The Essence of Completion</h3>
+								</a>
+								<p>삼성 갤럭시 S9 디자인스토리</p>
+								<span>Feb 22, 2018</span>
+							</li>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-galaxy-s8.jpg" alt="sortby_2-6"></a>
+								</div>
+								<a href="">
+									<h3>One as a Whole</h3>
+								</a>
+								<p>갤럭시 S8 디자인스토리</p>
+								<span>Mar 30, 2017</span>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="" class="inner_title">
+						<h3>#Imagine_What’s_Nexts</h3>
+						<span>arrow</span>
+					</a>
+					<div class="inner_content">
+						<p>
+							다가올 미래에 대한 상상은 우리 삶을 한단계 더 나아가게 하는 혁신의 원동력이 됩니다. 오늘을 살아가는 우리에게 삼성 디자인이 그리는 내일의 모습을 소개합니다.
+						</p>
+						<ul>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-think-2030.jpg" alt="sortby_3-1"></a>
+								</div>
+								<a href="">
+									<h3>Think 2030</h3>
+								</a>
+								<p>잠재된 미래를 펼치다</p>
+								<span>Jun 01, 2023</span>
+							</li>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-in-the-future.jpg" alt="sortby_3-2"></a>
+								</div>
+								<a href="">
+									<h3>In the Future</h3>
+								</a>
+								<p>삼성과 함께하는 미래</p>
+								<span>Feb 02, 2023</span>
+							</li>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-moving-forward-together.jpg" alt="sortby_3-3"></a>
+								</div>
+								<a href="">
+									<h3>Moving Forward Together</h3>
+								</a>
+								<p>함께하는 내일을 위한 디자인 스토리</p>
+								<span>Sep 30, 2021</span>
+							</li>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-empowering-future-02.jpg" alt="sortby_3-4"></a>
+								</div>
+								<a href="">
+									<h3>Empowering a New Future Part 2</h3>
+								</a>
+								<p>지속 가능한 사회를 위한 디자인</p>
+								<span>Oct 06, 2020</span>
+							</li>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-empowering-future-01.jpg" alt="sortby_3-5"></a>
+								</div>
+								<a href="">
+									<h3>Empowering a New Future Part 1</h3>
+								</a>
+								<p>미래를 준비하는 디자인</p>
+								<span>Sep 24, 2020</span>
+							</li>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-new-normal.jpg" alt="sortby_3-6"></a>
+								</div>
+								<a href="">
+									<h3>Towards the New Normal</h3>
+								</a>
+								<p>일상의 변화, 새로운 일상</p>
+								<span>Jun 16, 2020</span>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="" class="inner_title">
+						<h3>#Local_to_Global </h3>
+						<span>arrow</span>
+					</a>
+					<div class="inner_content">
+						<p>
+							다양한 문화와 환경을 가진 고객들의 일상을 더욱 풍요롭게 만들기 위해 그들의 터전을 이해하고 생활 방식에 깊이 공감합니다. 각 지역의 특색을 담은 삼성전자의 글로벌 디자인 스토리를 만나보세요.
+						</p>
+						<ul>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-j2.jpg" alt="sortby_4-1"></a>
+								</div>
+								<a href="">
+									<h3>Be Glocal</h3>
+								</a>
+								<p>삼성 J2 디자인스토리</p>
+								<span>Jul 28, 2016</span>
+							</li>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-ipd.jpg" alt="sortby_4-2"></a>
+								</div>
+								<a href="">
+									<h3>Dialogue Between Patient and Hospital</h3>
+								</a>
+								<p>삼성 IPD 서비스 디자인스토리</p>
+								<span>Oct 01, 2015</span>
+							</li>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-arab-care.jpg" alt="sortby_4-3"></a>
+								</div>
+								<a href="">
+									<h3>Dear Middle East, Are You All Right?</h3>
+								</a>
+								<p>중동 의료서비스 디자인</p>
+								<span>Mar 10, 2015</span>
+							</li>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-china-premium-phone.jpg" alt="sortby_4-4"></a>
+								</div>
+								<a href="">
+									<h3>Design Story of DAQI</h3>
+								</a>
+								<p>삼성 중국향 프리미엄폰</p>
+								<span>Nov 17, 2014</span>
+							</li>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-s-bike.jpg" alt="sortby_4-5"></a>
+								</div>
+								<a href="">
+									<h3>A Big Step for Urban Safety</h3>
+								</a>
+								<p>삼성 스마트 바이크 디자인스토리</p>
+								<span>Sep 11, 2014</span>
+							</li>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-indus2-washer.jpg" alt="sortby_4-6"></a>
+								</div>
+								<a href="">
+									<h3>Discover the Value of Design in Everyday Life</h3>
+								</a>
+								<p>이조식 세탁기 Indus2 디자인스토리1</p>
+								<span>Feb 07, 2014</span>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="" class="inner_title">
+						<h3>#User_eXperience</h3>
+						<span>arrow</span>
+					</a>
+					<div class="inner_content">
+						<p>
+							누구나 자신의 쓰임과 필요에 따라 제품을 꼭 맞게 사용하도록 언제나 사용자 목소리에 귀기울여 디자인합니다. 우리 일상을 스마트하고 
+							매끄럽게 잇는 경험, 삼성전자의 UX 이야기를 소개합니다.
+						</p>
+						<ul>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-one-ui-5.jpg" alt="sortby_5-1"></a>
+								</div>
+								<a href="">
+									<h3>Bringing Joy to Everyday Experiences</h3>
+								</a>
+								<p>One UI 5가 만드는 즐거운 일상</p>
+								<span>Mar 09, 2023</span>
+							</li>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-ux-writing.jpg" alt="sortby_5-2"></a>
+								</div>
+								<a href="">
+									<h3>Designing Words</h3>
+								</a>
+								<p>삼성 UX Writing 가이드</p>
+								<span>Nov 29, 2022</span>
+							</li>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-india-keyboard.jpg" alt="sortby_5-3"></a>
+								</div>
+								<a href="">
+									<h3>Samsung India Keyboard</h3>
+								</a>
+								<p>29개 인도 지역 언어를 위한 새로운 키보드</p>
+								<span>Jun 16, 2022</span>
+							</li>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-smartthings-home-life.jpg" alt="sortby_5-4"></a>
+								</div>
+								<a href="">
+									<h3>Living Smarter and Better</h3>
+								</a>
+								<p>SmartThings Home Life 스토리</p>
+								<span>Apr 26, 2022</span>
+							</li>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-bespoke-family-hub.jpg" alt="sortby_5-5"></a>
+								</div>
+								<a href="">
+									<h3>Made to Your Taste</h3>
+								</a>
+								<p>삼성 비스포크 패밀리허브 UX 디자인스토리</p>
+								<span>Aug 13, 2020</span>
+							</li>
+							<li>
+								<div class="image">
+									<a href=""><img src="images/sortby-family-hub.jpg" alt="sortby_5-6"></a>
+								</div>
+								<a href="">
+									<h3>We've Got Connection</h3>
+								</a>
+								<p>삼성 패밀리허브 UX 디자인스토리</p>
+								<span>Apr 28, 2016</span>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<section id="morestories">
+		<div class="inner">
+			<div id="content">
+				<div class="title">
+					<h2>MORE STORIES</h2>
+				</div>
+				<div id="sub_slider">
+					<div class="swiper-container cardSwiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="image">
+									<a href=""><img src="images/ourstories-da-acc-concept.jpg" alt="morestories1"></a>
+								</div>
+								<a href="">
+									<h3>Thoughtful Design to Shape Tomorrow</h3>
+								</a>
+								<p>가전 소모품 선행 콘셉트 디자인</p>
+								<span>Sep 12, 2024</span>
+							</div>
+							<div class="swiper-slide">
+								<div class="image">
+									<a href=""><img src="images/ourstories-galaxy-ring.jpg" alt="morestories2"></a>
+								</div>
+								<a href="">
+									<h3>Wellness on Your Finger</h3>
+								</a>
+								<p>삼성 갤럭시 링 디자인스토리</p>
+								<span>Aug 13, 2024</span>
+							</div>
+							<div class="swiper-slide">
+								<div class="image">
+									<a href=""><img src="images/ourstories-galaxy-buds3-pro.jpg" alt="morestories3"></a>
+								</div>
+								<a href="">
+									<h3>Elevate Your Everyday with Style and Sound</h3>
+								</a>
+								<p>삼성 갤럭시 버즈3 프로 디자인스토리</p>
+								<span>Aug 01, 2024</span>
+							</div>
+							<div class="swiper-slide">
+								<div class="image">
+									<a href=""><img src="images/ourstories-galaxy-watch-ultra.jpg" alt="morestories4"></a>
+								</div>
+								<a href="">
+									<h3>Ultra Design meets Ultimate Performance</h3>
+								</a>
+								<p>삼성 갤럭시 워치 울트라 디자인스토리</p>
+								<span>Jul 23, 2024</span>
+							</div>
+							<div class="swiper-slide">
+								<div class="image">
+									<a href=""><img src="images/ourstories-q6b6.jpg" alt="morestories5"></a>
+								</div>
+								<a href="">
+									<h3>Ultra Modern, Ultra Sleek</h3>
+								</a>
+								<p>삼성 갤럭시 Z 폴드6와 Z 플립6 디자인스토리</p>
+								<span>Jul 11, 2024</span>
+							</div>
+							<div class="swiper-slide">
+								<div class="image">
+									<a href=""><img src="images/ourstories-music-frame.jpg" alt="morestories6"></a>
+								</div>
+								<a href="">
+									<h3>Frame Your Rhythm</h3>
+								</a>
+								<p>삼성 뮤직 프레임 디자인스토리</p>
+								<span>May 30, 2024</span>
+							</div>
+						</div>
+						<a href="" class="more">MORE</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="news">
+		<section id="content">
+			<div class="title">
+				<h2>NEWS</h2>
+			</div>
+			<div id="sub_slider">
+				<div class="swiper-container cardSwiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="image">
+								<a href=""><img src="images/news-designaward-2024.jpg" alt="news1"></a>
+							</div>
+							<a href="">
+								<h3>2024 IDEA 디자인어워드</h3>
+							</a>
+							<p>
+								삼성전자가 세계적 권위의 국제 디자인 공모전 ‘IDEA(International Design Excellence 
+								Awards) 2024’에서 금상 2개, 은상 1개, 동상 2개, 입상(파이널리스트) 40개로 총 45개의 상을 
+								받았습니다.
+							</p>
+							<span>Sep 12, 2024</span>
+						</div>
+						<div class="swiper-slide">
+							<div class="image">
+								<a href=""><img src="images/news-recruitment-notice-2024-second-half.jpg" alt="news2"></a>
+							</div>
+							<a href="">
+								<h3>2024 하반기 삼성전자 디자인 채용 공고</h3>
+							</a>
+							<p>
+								새로운 인재를 통해 혁신과 성장을 추구하는 삼성전자 디자인경영센터에서 2024년 하반기 
+								경력채용을 진행합니다.
+							</p>
+							<span>Aug 13, 2024</span>
+						</div>
+						<div class="swiper-slide">
+							<div class="image">
+								<a href=""><img src="images/news-afw.jpg" alt="news3"></a>
+							</div>
+							<a href="">
+								<h3>2024 접근성 페스티벌 위크</h3>
+							</a>
+							<p>
+								세계 접근성 인식의 날을 맞이하여 5월 16일부터 6월 3일까지 제2회 접근성 페스티벌 위크 
+								(Accessibility Festival Week)가 개최되었습니다. 삼성전자 임직원들이 접근성에 대해 함께 
+								공감하고 이해할 수 있었던 뜻깊은 시간이었습니다.
+							</p>
+							<span>Aug 01, 2024</span>
+						</div>
+					</div>
+					<a href="" class="more">MORE</a>
+				</div>
+			</div>
+		</section>
+	</section>
+	<footer>
+		<div class="left">
+			<div class="ft_logo"><a href="">logo</a></div>
+			<ul class="copyright">
+				<li>© 2025 Samsung All Rights Reserved.</li>
+				<li><a href="">이메일 문의</a></li>
+				<li><a href="">개인정보처리방침</a></li>
+			</ul>
+		</div>
+		<div class="right">
+			<ul class="nav">
+				<li><a href="">OUR STORIES</a></li>
+				<li><a href="">ABOUT US</a></li>
+				<li><a href="">CAREER</a></li>
+				<li><a href="">NEWS</a></li>
+			</ul>
+		</div>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_12534" data-name="사각형 12534" width="30" height="30" transform="translate(-4185 -2140)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="마스크_그룹_113" data-name="마스크 그룹 113" transform="translate(4185 2140)" clip-path="url(#clip-path)">
+    <g id="그룹_14425" data-name="그룹 14425" transform="translate(-4429 -2688)">
+      <rect id="사각형_4236" data-name="사각형 4236" width="5" height="5" transform="translate(249 551)"/>
+      <rect id="사각형_4238" data-name="사각형 4238" width="5" height="5" transform="translate(259 561)"/>
+      <rect id="사각형_12161" data-name="사각형 12161" width="5" height="5" transform="translate(263.5 561)"/>
+      <rect id="사각형_4252" data-name="사각형 4252" width="5" height="5" transform="translate(259 571)"/>
+      <rect id="사각형_4253" data-name="사각형 4253" width="5" height="5" transform="translate(264 571)"/>
+      <rect id="사각형_12160" data-name="사각형 12160" width="5" height="5" transform="translate(269 571)"/>
+      <rect id="사각형_4239" data-name="사각형 4239" width="5" height="5" transform="translate(254 551)"/>
+      <rect id="사각형_12162" data-name="사각형 12162" width="5" height="5" transform="translate(258.5 551)"/>
+      <rect id="사각형_4242" data-name="사각형 4242" width="5" height="5" transform="translate(244 551)"/>
+      <rect id="사각형_4245" data-name="사각형 4245" width="5" height="5" transform="translate(259 561) rotate(90)"/>
+      <rect id="사각형_4251" data-name="사각형 4251" width="5" height="5" transform="translate(259 571) rotate(90)"/>
+      <rect id="사각형_4246" data-name="사각형 4246" width="5" height="5" transform="translate(254 561) rotate(90)"/>
+      <rect id="사각형_4250" data-name="사각형 4250" width="5" height="5" transform="translate(254 571) rotate(90)"/>
+      <rect id="사각형_4248" data-name="사각형 4248" width="5" height="5" transform="translate(249 561) rotate(90)"/>
+      <rect id="사각형_4249" data-name="사각형 4249" width="5" height="5" transform="translate(249 571) rotate(90)"/>
+    </g>
+  </g>
+</svg>
