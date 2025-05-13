@@ -287,50 +287,50 @@ window.addEventListener("load", function(){
 
 	sortBy_list.forEach(function(title){
 		title.addEventListener("click", function (e) {
-			e.preventDefault();
+				e.preventDefault();
 
-			const span = title.querySelector("span");
-			const nextElement = title.nextElementSibling;
-			const liGroup = nextElement?.querySelectorAll(".inner_content ul li");
-			const paragraph = nextElement?.querySelector("p");
+				const span = title.querySelector("span");
+				const nextElement = title.nextElementSibling;
+				const liGroup = nextElement?.querySelectorAll(".inner_content ul li");
+				const paragraph = nextElement?.querySelector("p");
 
-		// 클릭한 요소 토글
-		if (nextElement) {
-			nextElement.classList.toggle("active");
-		}
-		if (span) {
-			span.classList.toggle("active");
-		}
+			// 클릭한 요소 토글
+			if (nextElement) {
+				nextElement.classList.toggle("active");
+			}
+			if (span) {
+				span.classList.toggle("active");
+			}
 
-		const isActive=nextElement?.classList.contains("active");
+			const isActive=nextElement?.classList.contains("active");
 
-		gsap.killTweensOf(paragraph);
-		liGroup.forEach(item => gsap.killTweensOf(item));
+			gsap.killTweensOf(paragraph);
+			liGroup.forEach(item => gsap.killTweensOf(item));
 
-		gsap.set(paragraph, { y: 50, opacity: 0 });
-		gsap.set(liGroup, { y: 50, opacity: 0 });
+			gsap.set(paragraph, { y: 50, opacity: 0 });
+			gsap.set(liGroup, { y: 50, opacity: 0 });
 
-		ScrollTrigger.refresh();
+			ScrollTrigger.refresh();
 
-		if (isActive) {
-			nextElement.style.visibility = "hidden";
+			if (isActive) {
+				nextElement.style.visibility = "hidden";
 
-			requestAnimationFrame(() => {
-				nextElement.style.visibility = "visible";
+				requestAnimationFrame(() => {
+					nextElement.style.visibility = "visible";
 
-				let tl = gsap.timeline();
-				tl.to(paragraph, { y: 0, opacity: 1, duration: 0.2 });
-				liGroup.forEach((item, i) => {
-					tl.to(item, {
-						y: 0,
-						opacity: 1,
-						duration: 0.2,
-						stagger: 0.1
+					let tl = gsap.timeline();
+					tl.to(paragraph, { y: 0, opacity: 1, duration: 0.2 });
+					liGroup.forEach((item, i) => {
+						tl.to(item, {
+							y: 0,
+							opacity: 1,
+							duration: 0.2,
+							stagger: 0.1
+						});
 					});
 				});
-			});
-		}
-	});
+			}
+		});
 	});
 
 	let langList = lang.nextElementSibling;
@@ -364,42 +364,47 @@ window.addEventListener("load", function(){
 		}
 	});
 
-	//more stories_swiper
-	let swiperInstance;
+	//swiper
+	let moreSwiperInstance = null;
+	let newsSwiperInstance = null;
 
-	function initSwiper() {
-		const swiperContainer = document.querySelector('.cardSwiper');
-		const swiperWrapper = document.querySelector('.swiper-wrapper');
+	function initMoreSwiper() {
+		const container = document.querySelector('.moreSwiper');
+		const wrapper = container?.querySelector('.swiper-wrapper');
 
-		if (window.innerWidth < 760 && !swiperInstance) {
-			swiperInstance = new Swiper(swiperContainer, {
+		if (window.innerWidth < 760 && !moreSwiperInstance) {
+			moreSwiperInstance = new Swiper(container, {
 				slidesPerView: 1.25,
 				spaceBetween: 0,
-				breakpoints: {
-					760: {
-						slidesPerView: 1,
-						centerSlide: false,
-					},
-				},
-				
 			});
-		} else if (window.innerWidth >= 760 && swiperInstance) {
-			swiperInstance.destroy();
-			swiperInstance = null;
-
-			if (swiperWrapper) {
-				swiperWrapper.style.transform = ''; // transform 속성 초기화
-				const slides = swiperWrapper.querySelectorAll('.swiper-slide');
-				slides.forEach(slide => {
-					slide.style.transform = '';
-				});
-			}
-			if (swiperContainer) {
-				swiperContainer.style.transform = '';
-			}
+		} else if (window.innerWidth >= 760 && moreSwiperInstance) {
+			moreSwiperInstance.destroy(true, true);
+			moreSwiperInstance = null;
+			if (wrapper) wrapper.removeAttribute('style');
 		}
 	}
 
-	initSwiper();
-	window.addEventListener('resize', initSwiper);
+	function initNewsSwiper() {
+		const container = document.querySelector('.newsSwiper');
+		const wrapper = container?.querySelector('.swiper-wrapper');
+
+		if (window.innerWidth < 760 && !newsSwiperInstance) {
+			newsSwiperInstance = new Swiper(container, {
+				slidesPerView: 1.25,
+				spaceBetween: 0,
+			});
+		} else if (window.innerWidth >= 760 && newsSwiperInstance) {
+			newsSwiperInstance.destroy(true, true);
+			newsSwiperInstance = null;
+			if (wrapper) wrapper.removeAttribute('style');
+		}
+	}
+
+	function initSwipers() {
+		initMoreSwiper();
+		initNewsSwiper();
+	}
+
+	initSwipers();
+	window.addEventListener('resize', initSwipers);
 });
