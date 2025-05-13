@@ -1,9 +1,9 @@
 ## 반응형 웹 UI CLONE 프로젝트 (DESIGN SAMSUNG)
 
-삼성 공식 웹사이트를 참조하여 제작한 반응형 랜딩 페이지입니다.
-기존 CSS를 이용한 코드와는 달리 Vanilla JavaScript, Swiper, GSAP를 활용해 인터랙션으로 구현하였으며,
-PC와 모바일 환경 모두에서 일관된 사용자 경험(UX)을 제공할 수 있도록 설계하였습니다.
-디자인과 개발 간의 흐름을 고려한 UI 구성과 부드러운 애니메이션 처리에 중점을 두었습니다.
+삼성 공식 웹사이트를 참조하여 제작한 반응형 랜딩 페이지입니다. <br>
+기존 CSS를 이용한 코드와는 달리 Vanilla JavaScript, Swiper, GSAP를 활용해 인터랙션으로 구현하였으며, <br>
+PC와 모바일 환경 모두에서 일관된 사용자 경험(UX)을 제공할 수 있도록 설계하였습니다. <br>
+디자인과 개발 간의 흐름을 고려한 UI 구성과 부드러운 애니메이션 처리에 중점을 두었습니다. <br>
 
 <br/>
 
@@ -71,15 +71,13 @@ function checkMobile(){
 
 - 화면 크기 조정 (resize) 이벤트에 디바운스를 적용하여, 화면 크기 조정이 끝난 후 한 번만 함수가 실행되도록 합니다.
 
-<img src="images/ss2.jpg" width="300px" alt="모바일 메뉴 상호작용">
-
 ```javascript
 let resizeTimeout;
 function debounceResize(){
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(function(){
         checkMobile();
-    }, 200); // 200ms 후에 실행
+    }, 200);
 }
 
 window.addEventListener('resize', debounceResize);
@@ -112,250 +110,188 @@ gsap.to('.main_txt', {
 
 ---
 
-### ✅ 4. GNB 메뉴 호버 시 메뉴 열림(PC 전용)
+### ✅ 4. 텍스트 슬라이더
 
-- 메뉴 hover 시 헤더 높이 증가(=메뉴 열림), 마우스가 빠져나가면 원복합니다.
+- startTextSlider 함수는 주어진 리스트 요소에서 첫 번째 항목을 주기적으로 슬라이딩하여 애니메이션 효과를 줍니다.
 
 <img src="images/ss4.jpg" alt="데스크탑 GNB 호버">
 
 ```javascript
-item1.addEventListener("mouseenter", function(){
-	if(!desktopFlag) return;
-	header.classList.add("on");
-	header.style.height = "300px";
-});
+function startTextSlider(){
+    let sliderItems = document.querySelectorAll('.text-slider .item');
+    let index = 0;
 
-item1.addEventListener("mouseleave", function(){
-	if(!desktopFlag) return;
-	header.classList.remove("on");
-	header.removeAttribute("style");
-});
-```
-
----
-
-### ✅ 5. 이미지 백그라운드 JS로 넣기 (반응형)
-
-- 반응형을 목적으로 .pc, .mobile 요소 각각에 JS로 backgroundImage 삽입합니다.
-
-<img src="images/ss5.jpg" alt="스와이퍼 반응형 이미지 변경">
-
-```javascript
-const imageData = [
-	{ pc: "visual_pc1.jpg", mobile: "visual_mobile1.jpg" },
-	{ pc: "visual_pc2.jpg", mobile: "visual_mobile2.jpg" }
-];
-
-let swiperSlides = document.querySelectorAll(".main-slider .swiper-slide");
-
-swiperSlides.forEach(function(item, i){
-	let pc = item.querySelector(".pc");
-	let mobile = item.querySelector(".mobile");
-
-	pc.style.backgroundImage = `url(images/${imageData[i].pc})`;
-	mobile.style.backgroundImage = `url(images/${imageData[i].mobile})`;
-});
-```
-
----
-
-### ✅ 6. 메인 Swiper
-
-- 페이드 효과가 적용된 루프형 메인 슬라이더입니다.
-
-<img src="images/ss6.jpg" alt="메인 슬라이더">
-
-```javascript
-new Swiper(".main-slider .mainSwiper", {
-	loop: true,
-	speed: 1000,
-	effect: "fade",
-	fadeEffect: { crossFade: true },
-	autoplay: { delay: 5000 },
-	pagination: {
-		el: ".main-slider .swiper-pagination",
-		clickable: true,
-		renderBullet: function(index, className){
-			return `<span class="${className}">0${index+1}</span>`;
-		}
-	}
-});
-```
-
----
-
-### ✅ 7. 다중 Swiper
-
-- 반응형으로 슬라이드 수가 바뀌는 다중 슬라이더입니다.
-- autoplay가 적용되어 있어 기본적으로 자동으로 넘어가는 형태입니다.
-
-<img src="images/ss7.jpg" alt="다중 슬라이더">
-
-```javascript
-const productSwiper = new Swiper(".main-product .productSwiper", {
-	loop: true,
-	speed: 2000,
-	slidesPerView: 1.5,
-	centeredSlides: true,
-	spaceBetween: 20,
-	autoplay: { delay: 2000 },
-	breakpoints: {
-		769: {
-			slidesPerView: 3,
-			spaceBetween: 20
-		},
-		1025: {
-			slidesPerView: 4.5,
-			spaceBetween: 50
-		}
-	}
-});
-```
-
----
-
-### ✅ 8. 텍스트를 좌우로 움직이는 애니메이션(GSAP)
-
-- .main-typo 내부 텍스트 요소를 좌우로 움직이게 해 사용자의 시선을 끕니다.
-
-<img src="images/ss8_1.jpg" alt="텍스트 이동 전">
-<img src="images/ss8_2.jpg" alt="텍스트 이동 후">
-
-```javascript
-function checkDevice(){
-	if(window.matchMedia("(max-width: 768px)").matches){
-		if(device == "mobile") return;
-		device = "mobile";
-		xoffset = 7;
-	} else {
-		if(device == "pc") return;
-		device = "pc";
-		xoffset = 15;
-	}
-
-	gsap.utils.toArray(".main-typo").forEach(function(item){
-		const tl = gsap.timeline({
-			scrollTrigger: {
-				trigger: item,
-				scrub: 1,
-				start: "top bottom"
-			}
-		});
-
-		tl.to(item.querySelector("div:nth-child(1)"), {
-			x: -1 * xoffset + "%",
-			duration: 1
-		});
-		tl.to(item.querySelector("div:nth-child(2)"), {
-			x: xoffset + "%",
-			duration: 1,
-			delay: -1
-		});
-	});
+    setInterval(function(){
+        sliderItems[index].classList.remove('active');
+        index = (index + 1) % sliderItems.length;
+        sliderItems[index].classList.add('active');
+    }, 3000);
 }
 ```
 
 ---
 
-### ✅ 9. 특정 페이지 영역 진입 시 이미지 스케일 조절 (GSAP)
+### ✅ 5. 리서치 메뉴 동작
 
-- .scale-ani 요소가 화면 안에 들어오면 .active 클래스 추가 및 제거(scale(0.8) <-> scale(1.5))합니다.
+- research 버튼을 클릭하면 헤더와 dim이 활성화되고, 모바일 메뉴가 활성화된 상황이면 비활성화합니다.
+- form_close 버튼을 클릭하면 리서치 영역을 비활성화 합니다.
+- dim 영역을 클릭하면 헤더와 dim이 닫히도록 설정됩니다.
 
-<img src="images/ss9.jpg" alt="이미지 크기 조절">
+<img src="images/ss5.jpg" alt="스와이퍼 반응형 이미지 변경">
 
 ```javascript
-gsap.utils.toArray(".scale-ani").forEach(function(item){
-	gsap.timeline({
-		scrollTrigger: {
-			trigger: item,
-			start: "top bottom",
-			end: "bottom top",
-			onEnter: function(){
-				item.classList.add("active");
-			},
-			onLeave: function(){
-				item.classList.remove("active");
-			},
-			onLeaveBack: function(){
-				item.classList.remove("active");
-			}
-		},
-		delay: 2
-	});
+research.addEventListener("click", function(e){
+	e.preventDefault();
+
+	header.classList.add("active");
+	dim.classList.add("active");
+	body.classList.remove("scroll");
+
+	if (mo_menu) mo_menu.classList.remove("active");
+	if (research) research.classList.remove("on");
 });
-```
 
----
+// form close
+form_close.addEventListener("click", function(e){
+	e.preventDefault();
 
-### ✅ 10. 마우스 따라다니는 커서
+	header.classList.remove("active");
+	dim.classList.remove("active");
+	body.classList.add("scroll");
 
-- 마우스 움직임에 따라 .custom-cursor, .custom-cursor-text가 따라다니게 설정했습니다.
-
-<img src="images/ss10.jpg" alt="슬라이더 위에선 따라다니는 마우스 커서 생성">
-
-```javascript
-document.body.addEventListener("mousemove", function(e){
-	gsap.to("#custom-cursor, #custom-cursor-text", {
-		x: e.clientX,
-		y: e.clientY,
-		duration: 1.2,
-		ease: Power3.easeOut
-	});
+	if (research) research.classList.add("on");
+	if (mo_menu) mo_menu.classList.remove("active");
 });
-```
 
-+ hover 시 텍스트와 원이 커짐
+//dim 
+dim.addEventListener("click", function(){
+	if (isMobile) { //모바일 화면일 때
+		header.classList.remove("active");
+		dim.classList.remove("active");
+		body.classList.add("scroll");
 
-- .custom-hover에 마우스가 올라가면 애니메이션 효과가 발생합니다.
+		if (research) research.classList.add("on");
+		if (mo_menu) mo_menu.classList.remove("active");
+	}
+	else{ //데스크탑 화면일 때
+		header.classList.remove("active");
+		dim.classList.remove("active");
+		body.classList.add("scroll");
 
-```javascript
-customHover.forEach(function(item){
-	item.addEventListener("mouseenter", function(){
-		gsap.to(".custom-hover-circle, .custom-hover-text", {
-			width: "100%",
-			height: "100%",
-			opacity: 1,
-			duration: 0.3,
-			ease: Power3.easeOut
-		});
-	});
-
-	item.addEventListener("mouseleave", function(){
-		gsap.to(".custom-hover-circle, .custom-hover-text", {
-			width: 0,
-			height: 0,
-			opacity: 0,
-			duration: 0.3,
-			ease: Power3.easeOut
-		});
-	});
-});
-```
-
----
-
-### ✅ 11. page-top 버튼 보이기 / 숨기기
-- window.scrollY가 내려가면 #page-top 버튼이 나타남.
-
-<img src="images/ss11.jpg" alt="fiexd top 버튼">
-
-```javascript
-window.addEventListener("scroll", function(){
-	let winH = window.innerHeight;
-	if(window.scrollY > winH){
-		pageTop.classList.add("show");
-	} else {
-		pageTop.classList.remove("show");
+		if (research) research.classList.add("on");
+		if (mo_menu) mo_menu.classList.remove("active");
 	}
 });
 ```
 
-+ page-top 버튼 클릭 시 부드러운 이동 (GSAP)
+---
 
-- 클릭 시 맨 위로 스무스하게 스크롤됩니다.
+### ✅ 6. 정렬 메뉴 (sortBy)
+
+- sortBy_list의 각 항목을 클릭하면 해당 항목의 내용을 토글하며, 그 안의 항목들이 애니메이션과 함께 나타납니다
+
+<img src="images/ss6_1.jpg" alt="메인 슬라이더">
+<img src="images/ss6_2.jpg" alt="메인 슬라이더">
 
 ```javascript
-pageTop.addEventListener("click", function(){
-	gsap.to(window, { scrollTo: 0, duration: 0.3, ease: Power3.easeOut });
+//sortBy
+	let sortBy_list = document.querySelectorAll(".inner_title");
+
+	// 초기 상태 설정 (첫 번째 항목 열기 - 내용 보이도록)
+	const firstTitle = sortBy_list[0];
+	const firstContent = firstTitle?.nextElementSibling;
+
+	if (firstContent) {
+		firstContent.classList.add("active");
+
+		const initialLiGroup = firstContent.querySelectorAll(".inner_content ul li");
+		const initialParagraph = firstContent.querySelector("p");
+
+		gsap.set(initialParagraph, { y: 0, opacity: 1 });
+		gsap.set(initialLiGroup, { y: 0, opacity: 1, stagger: 0.1 });
+		
+		firstTitle?.querySelector("span")?.classList.add("active");
+	}
+
+	sortBy_list.forEach(function(title){
+		title.addEventListener("click", function (e) {
+				e.preventDefault();
+
+				const span = title.querySelector("span");
+				const nextElement = title.nextElementSibling;
+				const liGroup = nextElement?.querySelectorAll(".inner_content ul li");
+				const paragraph = nextElement?.querySelector("p");
+
+			// 클릭한 요소 토글
+			if (nextElement) {
+				nextElement.classList.toggle("active");
+			}
+			if (span) {
+				span.classList.toggle("active");
+			}
+
+			const isActive=nextElement?.classList.contains("active");
+
+			gsap.killTweensOf(paragraph);
+			liGroup.forEach(item => gsap.killTweensOf(item));
+
+			gsap.set(paragraph, { y: 50, opacity: 0 });
+			gsap.set(liGroup, { y: 50, opacity: 0 });
+
+			ScrollTrigger.refresh();
+
+			if (isActive) {
+				nextElement.style.visibility = "hidden";
+
+				requestAnimationFrame(() => {
+					nextElement.style.visibility = "visible";
+
+					let tl = gsap.timeline();
+					tl.to(paragraph, { y: 0, opacity: 1, duration: 0.2 });
+					liGroup.forEach((item, i) => {
+						tl.to(item, {
+							y: 0,
+							opacity: 1,
+							duration: 0.2,
+							stagger: 0.1
+						});
+					});
+				});
+			}
+		});
+	});
+```
+
+---
+
+### ✅ 7. 언어 선택 메뉴 (lang)
+
+- 언어 선택 메뉴가 마우스를 올렸을 때 나타나고, 마우스를 떼면 사라지도록 설정됩니다.
+
+<img src="images/ss7.jpg" alt="다중 슬라이더">
+
+```javascript
+langMenu.addEventListener('mouseenter', function(){
+    langDropdown.classList.add('show');
+});
+
+langMenu.addEventListener('mouseleave', function(){
+    langDropdown.classList.remove('show');
+});
+```
+
+---
+
+### ✅ 8. 모바일 메뉴 토글
+
+- mo_menu를 클릭하면 모바일 메뉴가 열리거나 닫히며, 그에 따라 nav 메뉴와 다른 요소들의 상태가 변경됩니다.
+
+<img src="images/ss8_1.jpg" alt="텍스트 이동 전">
+<img src="images/ss8_2.jpg" alt="텍스트 이동 후">
+
+```javascript
+moMenu.addEventListener('click', function(){
+    header.classList.toggle('menu-open');
+    nav.classList.toggle('open');
 });
 ```
