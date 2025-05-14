@@ -1,4 +1,4 @@
-## 반응형 웹 UI CLONE 프로젝트 (DESIGN SAMSUNG)
+## 📱 반응형 웹 UI CLONE 프로젝트 (DESIGN SAMSUNG)
 
 삼성 공식 웹사이트를 참조하여 제작한 반응형 랜딩 페이지입니다. <br>
 기존 CSS를 이용한 코드와는 달리 Vanilla JavaScript, Swiper, GSAP를 활용해 인터랙션으로 구현하였으며, <br>
@@ -19,7 +19,7 @@ PC와 모바일 환경 모두에서 일관된 사용자 경험(UX)을 제공할 
 
 <br/>
 
-### 🛠️ 사용 기술
+### 🖥️ 사용 기술
 
 | 기술 | 설명 |
 |------|------|
